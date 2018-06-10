@@ -1,0 +1,61 @@
+package edu.kpi.domain;
+
+public class MathItem {
+	private String id;
+	private String name;
+	private String desc;
+	private boolean parameterized;
+
+	
+	public MathItem(String id, String name, String desc, boolean parameterized) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.desc = desc;
+		this.parameterized = parameterized;
+	}
+	public MathItem() {
+		super();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public boolean isParameterized() {
+		return parameterized;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MathItem other = (MathItem) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+}
